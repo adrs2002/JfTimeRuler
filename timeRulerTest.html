@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+
+    <script src="js/JfTimeRuler.js"></script>
+
+    <script>
+
+        var ruler = new JfTimeRuler();
+
+        document.body.appendChild(ruler.dom);
+
+        function main() {
+    
+            requestAnimationFrame(main);
+
+            ruler.add("add10000");
+
+            var hogeArray = new Array();
+            for (var i = 0; i < 10000; i++) {
+                hogeArray.push(i);
+            }
+
+            ruler.add("add50000");
+
+            hogeArray = new Array();
+            for (var i = 0; i < 50000; i++) {
+                hogeArray.push(i);
+            }
+
+            ruler.add("add100000");
+
+            hogeArray = new Array();
+            for (var i = 0; i < 100000; i++) {
+                hogeArray.push(i);
+            }
+
+            ruler.update();
+        };
+
+
+        main();
+
+    </script>
+
+</body>
+</html>
